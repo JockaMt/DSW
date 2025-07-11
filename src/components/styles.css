@@ -9,14 +9,6 @@ body {
   box-sizing: border-box;
 }
 
-h2 {
-  /* Geral, mas pode ser sobreescrito */
-  font-size: 2.5em;
-  color: var(--primary-color);
-  margin-bottom: 0.5em;
-}
-
-
 /* ==========================================================================
    Header Styles
    ========================================================================== */
@@ -43,7 +35,6 @@ h2 {
 .header-logo {
   width: auto;
   height: 5rem;
-  color: var(--secondary-color);
 }
 
 .header-search-button {
@@ -89,12 +80,12 @@ h2 {
   align-items: center;
   border-radius: 10px;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header-menu ul li a:hover {
   background-color: rgba(61, 61, 61, 0.1);
-  color: var(--highlight-primary-color);
+  color: var(--accent-color);
 }
 
 .header-input {
@@ -165,14 +156,6 @@ h2 {
 .header-nav ul li a:hover {
   color: var(--highlight-primary-color);
   /* Hover effect, usando primary-color para destacar */
-}
-
-/* Nota: .header-button:hover está sem o seletor pai, pode afetar muitos botões.
-   É melhor especificar como .header-nav .header-button:hover ou dar uma classe mais específica.
-   Por enquanto, assumindo que se refere a um botão dentro do header. */
-.header-button:hover {
-  color: var(--highlight-primary-color) !important;
-  /* Usando primary-color para manter a consistência */
 }
 
 
@@ -381,13 +364,14 @@ h2 {
   /* ----- PROPRIEDADES PARA TÍTULO DE 3 LINHAS ----- */
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   /* Limita a 3 linhas */
   -webkit-box-orient: vertical;
   overflow: hidden;
   /* Esconde o texto que excede as 3 linhas */
   text-overflow: ellipsis;
   /* Adiciona '...' no final do texto truncado */
-  min-height: calc(1.25rem * 1.4 * 3);
+  min-height: calc(1.25rem * 1.4 * 2);
   /* Garante altura mínima para 3 linhas */
   /* 1.25rem (font-size) * 1.4 (line-height) * 3 (linhas) */
   /* ----------------------------------------------- */
@@ -431,6 +415,83 @@ h2 {
 
 .num-reviews {
   font-weight: 500;
+}
+
+/* ==========================================================================
+   Products Page Styles
+   ========================================================================== */
+
+.products-page-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16.5rem;
+  /* Espaçamento entre os cards */
+  /* Espaçamento interno da seção de produtos */
+  background-color: var(--secondary-color);
+  /* Fundo sutil para a seção de produtos */
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+}
+
+.products-page-card:hover {
+  transform: translateY(-5px);
+  /* Eleva o card um pouco no hover */
+  box-shadow: 0 4px 12px var(--shadow-color);
+  /* Sombra mais destacada no hover */
+}
+
+.products-page-card img {
+  /* Altura fixa para as imagens dos produtos */
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  margin: 1rem;
+}
+
+.products-page-card h3 {
+  font-size: 1rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* Tamanho da fonte do título */
+  color: var(--text-color);
+  /* Remove margem superior e inferior, adiciona inferior */
+  font-weight: 600;
+  /* Um pouco mais negrito */
+  line-height: 1.4;
+  /* Espaçamento entre linhas para melhor leitura */
+
+  /* ----- PROPRIEDADES PARA TÍTULO DE 3 LINHAS ----- */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  /* Limita a 3 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Esconde o texto que excede as 3 linhas */
+  text-overflow: ellipsis;
+  /* Adiciona '...' no final do texto truncado */
+  min-height: calc(1.25rem * 1.4 * 2.5);
+  /* Garante altura mínima para 3 linhas */
+  /* 1.25rem (font-size) * 1.4 (line-height) * 3 (linhas) */
+  /* ----------------------------------------------- */
+  text-align: left;
+}
+
+.products-page-card p {
+  font-size: 0.9rem;
+  width: 100%;
+  /* Tamanho da fonte do preço */
+  color: var(--accent-color);
+  /* Cor de destaque para o preço */
+  font-weight: 700;
+  /* Preço bem negrito */
+  /* Espaço acima do preço */
+  text-align: left;
+  /* Preço alinhado à esquerda. Se quiser à direita, volte para 'right' */
+  padding: 1rem;
 }
 
 

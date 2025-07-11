@@ -233,10 +233,36 @@ body {
     padding: 2em 1em; /* Adiciona espaçamento interno */
 }
 
+.products-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima da seção de produtos */
+    margin: 0 auto; /* Centraliza a seção na página */
+    padding: 2em 1em; /* Adiciona espaçamento interno */
+    background-color: var(--secondary-color);
+}
+
+.products-background {
+    width: calc(100% - 2em); /* Largura total menos o padding */
+    padding: 2em 0; /* Espaçamento interno */
+}
+
 .products-container {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: white;
+}
+
+.products-page-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    width: 100%;
+    padding: 2em 0; /* Espaçamento interno */
+    gap: 1em; /* Espaçamento entre os cards */
 }
 
 .products-header {
@@ -246,7 +272,7 @@ body {
     justify-content: space-between; /* Espaço entre o título e o menu */
     width: 100%;
     height: 100%;
-    padding: 1em; /* Ajustado para padding em todos os lados */
+    padding: 1em 1em 1em 0 ; /* Ajustado para padding em todos os lados */
     background-color: var(--secondary-color); /* Fundo sutil */
     border-bottom: 1px solid var(--light-text-color); /* Linha sutil abaixo do header */
     margin-bottom: 1em; /* Espaço abaixo do header */

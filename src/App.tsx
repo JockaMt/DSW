@@ -5,6 +5,7 @@ import HeaderMenu from './components/header-menu'
 import RollToTop from './components/roll-to-top'
 import Landing from './sections/landing'
 import Products from './sections/products'
+import Sponsor from './sections/sponsor'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <RollToTop/>
       <Header/>
       <HeaderMenu/>
+      <Sponsor/>
       <Landing/>
       <Products/>
       <Footer/>

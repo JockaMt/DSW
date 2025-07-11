@@ -19,7 +19,6 @@ const Landing = () => {
     };
     return (
         <section className="landing">
-            <img className="landing-image" src="https://mymada.com/assets/images/12.png" alt="Banner de Destaque da TrickTech" />
             <div className="intro">
                 <h2>Bem-vindo ao TrickTech!</h2>
                 <p>Descubra os produtos de tecnologia mais recentes com os melhores preços. Não perca nossas ofertas exclusivas!</p>

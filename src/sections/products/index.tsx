@@ -2,7 +2,7 @@ const Products = () => {
     return (
         <section className="products">
             <h2>Produtos</h2>
-            <div className="products-container">
+            <div id="products" className="products-container">
                 <div className="products-header">
                     <nav className="products-menu">
                         <ul className="products-menu-list">
@@ -17,7 +17,7 @@ const Products = () => {
                     <div className="products-menu-actions">
                         <button className="products-menu-button">Ordenar por</button>
                         <button className="products-menu-button">Filtrar</button>
-                    <input className="products-menu-input" type="text" placeholder="Pesquisar..." />
+                        <input className="products-menu-input" type="text" placeholder="Pesquisar..." />
                     </div>
                 </div>
                 <div className="products-list">

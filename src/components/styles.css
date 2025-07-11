@@ -1,0 +1,485 @@
+/* Importar fontes do Google Fonts (adicionar no seu HTML ou CSS) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 { /* Geral, mas pode ser sobreescrito */
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: rgb(61, 61, 61); /* Ajuste se necessário, 'var(--text-color)' ou 'var(--light-text-color)' */
+    width: 100%;
+    padding: 1.7rem;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    text-align: start;
+    width: 100%;
+    margin: 0;
+    color: var(--secondary-color); /* Título do header em branco/claro */
+}
+
+.header-search-button {
+    background-color: transparent;
+    border: none; /* Garante que não haja borda */
+    cursor: pointer; /* Indica que é clicável */
+}
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: #e0e0e0 1px solid;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.050);
+    z-index: 1000;
+}
+
+.header-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+}
+
+.header-menu ul li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-menu ul li a {
+    display: flex;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0 2rem;
+    height: 100%;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.header-menu ul li a:hover {
+    background-color: rgba(61, 61, 61, 0.1);
+    color: var(--highlight-primary-color);
+}
+
+.header-input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    max-width: 400px;
+    position: absolute; /* Ajuste se a posição absoluta for a intenção */
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: var(--text-color); /* Usar text-color para contraste */
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+
+.header-input input {
+    flex: 1;
+    border: none;
+    padding: .6rem;
+    outline: none;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: var(--text-color); /* Usar text-color para contraste */
+}
+
+.header-input button {
+    padding: 0.6rem;
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between; /* Mantenho, mas talvez fosse 'flex-end' se o justify-content: right era a intenção */
+    color: var(--primary-color);
+    width: 100%;
+    justify-content: right; /* Isso sobreescreve justify-content: space-between, causando redundância */
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin-right: 1rem;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Cor do texto do link no nav */
+    font-weight: 500;
+    font-size: x-large;
+    transition: color 0.3s ease;
+    padding: .4rem;
+}
+
+.header-nav ul li a:hover {
+    color: var(--highlight-primary-color); /* Hover effect, usando primary-color para destacar */
+}
+
+/* Nota: .header-button:hover está sem o seletor pai, pode afetar muitos botões.
+   É melhor especificar como .header-nav .header-button:hover ou dar uma classe mais específica.
+   Por enquanto, assumindo que se refere a um botão dentro do header. */
+.header-button:hover {
+    color: var(--highlight-primary-color) !important; /* Usando primary-color para manter a consistência */
+}
+
+
+/* ==========================================================================
+   Landing Section Styles (do Código 1)
+   ========================================================================== */
+.landing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px; /* Reduzindo um pouco o max-width para um visual mais contido */
+    margin: 0 auto; /* Centraliza a seção na página */
+    align-items: center;
+    overflow: hidden; /* Garante que nada transborde */
+}
+
+.intro {
+    text-align: center;
+    padding: 3rem 1rem; /* Aumenta o padding vertical */
+    background-color: var(--secondary-color); /* Fundo sutil */
+    width: 100%; /* Garante que o intro ocupe toda a largura */
+}
+
+.intro h2 { /* Sobreescrevendo o h2 global para este contexto */
+    font-size: 3em; /* Aumenta o título para maior impacto */
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+    font-weight: 700; /* Mais negrito */
+    line-height: 1.2;
+}
+
+.intro p {
+    font-size: 1.25em; /* Aumenta o parágrafo */
+    color: var(--light-text-color);
+    max-width: 700px; /* Limita a largura do parágrafo para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+.landing-image {
+    width: 100%;
+    height: 35rem; /* Aumenta um pouco a altura para mais impacto */
+    object-fit: cover;
+    object-position: center; /* Garante que a parte central da imagem seja visível */
+}
+
+.highlights {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo, os botões empurram */
+    width: 100%;
+    padding: 2em 1em; /* Aumenta o padding para mais "ar" */
+    background-color: var(--secondary-color);
+    gap: 1em; /* Espaçamento entre os elementos */
+    position: relative; /* Para posicionar os botões de forma mais flexível */
+}
+
+.products-preview {
+    display: flex;
+    gap: 2em;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Usar auto para que a barra de rolagem apareça apenas quando necessário */
+    padding-bottom: 1em; /* Adiciona padding para evitar que a barra de rolagem cubra o conteúdo */
+    -webkit-overflow-scrolling: touch; /* Melhora o scroll em iOS */
+    /* Estilos para esconder a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.products-preview::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.landing-button {
+    background-color: var(--primary-color); /* Cor de fundo para os botões */
+    border: none;
+    font-size: 2.5em; /* Um pouco menor para melhor proporção */
+    color: var(--card-bg-color); /* Cor do ícone */
+    cursor: pointer;
+    border-radius: 50%; /* Botões circulares */
+    width: 60px; /* Largura e altura iguais */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px var(--shadow-color-light); /* Usando light para os botões */
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+.landing-button:hover {
+    background-color: #0056b3; /* Cor mais escura no hover */
+    transform: scale(1.05); /* Pequeno efeito de zoom */
+}
+
+.landing-button:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+
+/* ==========================================================================
+   Product Card Styles (do Código 2)
+   ========================================================================== */
+.product-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius-md); /* Bordas levemente arredondadas */
+    padding: 1rem; /* Padding interno consistente */
+    height: auto; /* Altura flexível para se adaptar ao conteúdo */
+    min-width: 250px; /* Largura mínima razoável */
+    max-width: 300px; /* Largura máxima para evitar cards muito largos */
+    text-align: left; /* Texto alinhado à esquerda para legibilidade */
+    box-shadow: 0 4px 12px var(--shadow-color-light); /* Sombra mais suave e elevada */
+    margin: 0.75rem; /* Margem externa para espaçamento entre cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra imagem para o topo, conteúdo para baixo */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transições suaves para hover */
+    overflow: hidden; /* Garante que nada transborde do card */
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Eleva um pouco mais no hover */
+    box-shadow: 0 8px 20px var(--shadow-color-medium); /* Sombra mais destacada no hover */
+}
+
+.landing-card-image {
+    width: 100%;
+    height: 180px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: var(--border-radius-md); /* Borda arredondada na imagem */
+    margin-bottom: 1rem; /* Espaço entre a imagem e o conteúdo */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    justify-content: space-between; /* Ajuda a posicionar o preço no final */
+}
+
+.product-card h2 {
+    font-size: 1.25rem !important; /* Tamanho da fonte do título */
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0; /* Remove margem superior e inferior, adiciona inferior */
+    font-weight: 600; /* Um pouco mais negrito */
+    line-height: 1.4; /* Espaçamento entre linhas para melhor leitura */
+
+    /* ----- PROPRIEDADES PARA TÍTULO DE 3 LINHAS ----- */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Esconde o texto que excede as 3 linhas */
+    text-overflow: ellipsis; /* Adiciona '...' no final do texto truncado */
+    min-height: calc(1.25rem * 1.4 * 3); /* Garante altura mínima para 3 linhas */
+    /* 1.25rem (font-size) * 1.4 (line-height) * 3 (linhas) */
+    /* ----------------------------------------------- */
+}
+
+.product-card p {
+    font-size: 1.1rem; /* Tamanho da fonte do preço */
+    color: var(--primary-color); /* Cor de destaque para o preço */
+    font-weight: 700; /* Preço bem negrito */
+    margin-top: 1rem; /* Espaço acima do preço */
+    text-align: left; /* Preço alinhado à esquerda. Se quiser à direita, volte para 'right' */
+}
+
+
+/* ==========================================================================
+   Product Rating Styles
+   ========================================================================== */
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.4em; /* Espaço entre as estrelas e o número de avaliações */
+    margin-bottom: 0.8rem; /* Espaço abaixo da avaliação */
+    color: var(--light-text-color); /* Cor para o número de avaliações */
+    font-size: 0.9em;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    margin-right: 0.2em; /* Espaço à direita das estrelas */
+}
+
+.num-reviews {
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   Roll to Top Button Styles
+   ========================================================================== */
+.roll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    background-color: white;
+    display: flex; /* O JavaScript irá alternar isso */
+    cursor: pointer;
+    border: none;
+    z-index: 99;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Impede cliques quando invisível */
+}
+
+.roll-to-top.show {
+    opacity: 1; /* Torna visível */
+    pointer-events: auto; /* Permite cliques */
+}
+
+.roll-to-top-icon {
+    display: flex;
+    margin: .5rem;
+}
+
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--accent-color); /* Cor do texto no footer */
+    padding: 1rem;
+    font-size: 0.9em;
+    position: relative; /* Pode ser 'fixed' ou 'sticky' dependendo do seu layout */
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   Media Queries (Responsividade)
+   ========================================================================== */
+
+/* Telas menores que 768px */
+@media (max-width: 768px) {
+    .intro h2 {
+        font-size: 2.2em;
+    }
+
+    .intro p {
+        font-size: 1em;
+    }
+
+    .landing-image {
+        height: 25rem;
+    }
+
+    .highlights {
+        padding: 1.5em 0.5em;
+    }
+
+    .landing-button {
+        font-size: 2em;
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-card {
+        min-width: 200px;
+        max-width: 280px;
+        margin: 0.5rem;
+    }
+
+    .product-card h2 {
+        font-size: 1.1rem !important; /* Ajuste para mobile */
+        min-height: calc(1.1rem * 1.4 * 3);
+    }
+
+    .product-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Telas menores que 480px */
+@media (max-width: 480px) {
+    .intro h2 {
+        font-size: 1.8em;
+    }
+
+    .intro p {
+        font-size: 0.9em;
+    }
+
+    .landing-image {
+        height: 20rem;
+    }
+
+    .highlights {
+        padding: 1em 0.2em;
+    }
+
+    .landing-button {
+        font-size: 1.8em;
+        width: 45px;
+        height: 45px;
+    }
+
+    .product-card {
+        min-width: 180px; /* Permite cards menores em telas muito pequenas */
+        max-width: 250px;
+        padding: 0.8rem;
+    }
+
+    .landing-card-image {
+        height: 150px;
+        margin-bottom: 0.8rem;
+    }
+
+    .product-card h2 {
+        font-size: 1rem !important; /* Ajuste para mobile */
+        min-height: calc(1rem * 1.4 * 3);
+    }
+
+    .product-card p {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,511 @@
+:root {
+    --secondary-color: hwb(210 97% 2%); /* Cinza claro para fundos e seções */
+    --text-color: #343a40; /* Cinza escuro para textos principais */
+    --light-text-color: #6c757d; /* Cinza médio para textos secundários */
+    --card-bg-color: #ffffff; /* Fundo do card */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
+    --border-radius-lg: 12px;
+    --border-radius-md: 8px;
+}
+
+/* Importar fontes do Google Fonts (adicionar no seu HTML ou CSS) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px; /* Reduzindo um pouco o max-width para um visual mais contido */
+    margin: 0 auto; /* Centraliza a seção na página */
+    align-items: center;
+    overflow: hidden; /* Garante que nada transborde */
+}
+
+.intro {
+    text-align: center;
+    padding: 3rem 1rem; /* Aumenta o padding vertical */
+    background-color: var(--secondary-color); /* Fundo sutil */
+    width: 100%; /* Garante que o intro ocupe toda a largura */
+}
+
+.intro h2 {
+    font-size: 3em; /* Aumenta o título para maior impacto */
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+    font-weight: 700; /* Mais negrito */
+    line-height: 1.2;
+}
+
+.intro p {
+    font-size: 1.25em; /* Aumenta o parágrafo */
+    color: var(--light-text-color);
+    max-width: 700px; /* Limita a largura do parágrafo para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+.landing-image {
+    width: 100%;
+    height: 35rem; /* Aumenta um pouco a altura para mais impacto */
+    object-fit: cover;
+    object-position: center; /* Garante que a parte central da imagem seja visível */
+}
+
+.highlights {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo, os botões empurram */
+    width: 100%;
+    padding: 2em 1em; /* Aumenta o padding para mais "ar" */
+    background-color: var(--secondary-color);
+    gap: 1em; /* Espaçamento entre os elementos */
+    position: relative; /* Para posicionar os botões de forma mais flexível */
+}
+
+.products-preview {
+    display: flex;
+    gap: 2em;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Usar auto para que a barra de rolagem apareça apenas quando necessário */
+    padding-bottom: 1em; /* Adiciona padding para evitar que a barra de rolagem cubra o conteúdo */
+    -webkit-overflow-scrolling: touch; /* Melhora o scroll em iOS */
+    /* Estilos para esconder a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.products-preview::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.product-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius-md); /* Borda mais suave */
+    padding: 1.5em; /* Mais padding interno */
+    height: auto; /* Altura flexível */
+    min-width: 280px; /* Min-width para cards menores em telas menores */
+    max-width: 300px; /* Mantém a largura máxima */
+    text-align: left; /* Alinha o texto à esquerda para um visual mais moderno */
+    box-shadow: 0 5px 15px var(--shadow-color); /* Sombra mais pronunciada e suave */
+    margin: 0.5rem; /* Margem para espaçamento externo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o conteúdo para as bordas */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição para hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra mais intensa no hover */
+}
+
+.landing-card-image {
+    width: 100%;
+    height: 180px; /* Altura fixa para a imagem do card */
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1em; /* Espaço abaixo da imagem */
+}
+
+.product-card h2 {
+    font-size: 1.5em; /* Tamanho do título do produto */
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.product-card p {
+    font-size: 1.2em; /* Tamanho do preço */
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.landing-button {
+    background-color: var(--primary-color); /* Cor de fundo para os botões */
+    border: none;
+    font-size: 2.5em; /* Um pouco menor para melhor proporção */
+    color: var(--card-bg-color); /* Cor do ícone */
+    cursor: pointer;
+    border-radius: 50%; /* Botões circulares */
+    width: 50px; /* Largura e altura iguais */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+.landing-button:hover {
+    background-color: var(--highlight-primary-color); /* Cor mais escura no hover */
+    transform: scale(1.05); /* Pequeno efeito de zoom */
+}
+
+.landing-button:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .intro h2 {
+        font-size: 2.2em;
+    }
+
+    .intro p {
+        font-size: 1em;
+    }
+
+    .landing-image {
+        height: 25rem;
+    }
+
+    .highlights {
+        padding: 1.5em 0.5em;
+    }
+
+    .landing-button {
+        font-size: 2em;
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-card {
+        min-width: 240px;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h2 {
+        font-size: 1.8em;
+    }
+
+    .intro p {
+        font-size: 0.9em;
+    }
+
+    .landing-image {
+        height: 20rem;
+    }
+
+    .highlights {
+        padding: 1em 0.2em;
+    }
+
+    .landing-button {
+        font-size: 1.8em;
+        width: 45px;
+        height: 45px;
+    }
+
+    .product-card {
+        min-width: 200px; /* Permite cards menores em telas muito pequenas */
+        max-width: 250px;
+    }
+}
+
+/* ==========================================================================
+   Product Section Styles
+   ========================================================================== */
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima da seção de produtos */
+    margin: 0 auto; /* Centraliza a seção na página */
+    padding: 2em 1em; /* Adiciona espaçamento interno */
+}
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.products-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o título e o menu */
+    width: 100%;
+    height: 100%;
+    padding: 1em; /* Ajustado para padding em todos os lados */
+    background-color: var(--secondary-color); /* Fundo sutil */
+    border-bottom: 1px solid var(--light-text-color); /* Linha sutil abaixo do header */
+    margin-bottom: 1em; /* Espaço abaixo do header */
+    position: sticky; /* Fixa o header no topo ao rolar */
+    top: 0; /* Fixa no topo */
+    z-index: 10; /* Garante que o header fique acima de outros conteúdos */
+}
+
+/* Título dentro do products-header (você provavelmente tem um h1 ou h2 aqui) */
+.products-header h2 { /* Exemplo, ajuste o seletor conforme seu HTML */
+    font-size: 2em; /* Um pouco menor para o header da seção */
+    margin: 0;
+    color: var(--text-color);
+}
+
+
+.products-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.products-menu-list {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 0.5em; /* Espaçamento entre itens do menu */
+}
+
+.products-menu-item {
+    display: flex;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: .4rem 1rem;
+    height: 100%; /* Ajuste a altura se necessário com base no conteúdo */
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.products-menu-item:hover {
+    background-color: rgba(39, 63, 79, 0.1); /* Fundo sutil no hover */
+    color: var(--accent-color); /* Cor do texto no hover */
+}
+
+.products-menu-actions {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em; /* Espaço entre os botões e a barra de pesquisa */
+}
+
+.products-menu-button {
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--card-bg-color);
+    border: none;
+    text-wrap: nowrap; /* Mantém o texto em uma linha */
+    padding: 0.5em 1em;
+    height: 100%; /* Ajusta a altura para alinhar com o menu */
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.products-menu-button:hover {
+    background-color: var(--highlight-primary-color); /* Cor mais escura no hover */
+    transform: translateY(-2px);
+}
+
+.products-menu-input {
+    padding: 0.5em;
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius-md);
+    width: 200px; /* Largura fixa para a barra de pesquisa */
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--card-bg-color);
+    outline: none; /* Removido border: none para manter o border inicial */
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    width: 100%;
+    padding: 2em 0; /* Espaçamento interno */
+    gap: 2em; /* Espaçamento entre os cards */
+}
+
+/* Reutilizando estilos de card da seção Landing para consistência */
+.products-card {
+    /* Herda a maioria dos estilos do .product-card ou os define aqui de forma similar */
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    height: auto;
+    min-width: 250px; /* Um pouco menor para caber mais em telas maiores de tablet */
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 12px var(--shadow-color-light);
+    margin: 0; /* Removido margin aqui, pois o gap do products-list já cuida disso */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.products-card:hover {
+    transform: translateY(-8px); /* Eleva um pouco mais no hover, consistente com LandingCard */
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* ==========================================================================
+   Media Queries for Product Section
+   ========================================================================== */
+
+/* Tablet Portrait & Small Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .products {
+        padding: 1.5em 0.5em; /* Ajusta padding para telas menores */
+    }
+
+    .products-header {
+        flex-direction: column; /* Empilha o título e as ações */
+        align-items: flex-start; /* Alinha tudo à esquerda */
+        padding: 1em;
+        gap: 1em; /* Espaço entre o título e as ações */
+    }
+
+    .products-header h2 {
+        font-size: 1.8em; /* Título menor para tablets */
+    }
+
+    .products-menu {
+        flex-direction: column; /* Empilha o menu de filtros e ações */
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .products-menu-list {
+        width: 100%;
+        justify-content: flex-start; /* Alinha os itens do menu à esquerda */
+        gap: 0.8em; /* Mais espaço entre os itens na nova disposição */
+        margin-bottom: 1em; /* Espaço antes das ações */
+    }
+
+    .products-menu-item {
+        padding: .3rem 0.8rem; /* Padding menor */
+        font-size: 0.95em;
+    }
+
+    .products-menu-actions {
+        width: 100%; /* Ocupa a largura total */
+        justify-content: space-between; /* Espaça botões e input */
+    }
+
+    .products-menu-button {
+        padding: 0.4em 0.8em; /* Padding menor */
+        font-size: 0.9em;
+    }
+
+    .products-menu-input {
+        flex-grow: 1; /* Permite que o input preencha o espaço restante */
+        width: auto; /* Remove largura fixa */
+        margin-left: 0; /* Remove margem extra */
+    }
+
+    .products-list {
+        gap: 1.5em; /* Reduz o espaçamento entre os cards */
+    }
+
+    .products-card {
+        min-width: 220px; /* Adapta o min-width para tablets */
+        max-width: 45%; /* Para ter 2 cards por linha */
+    }
+}
+
+/* Mobile Devices (max-width: 767px) - Ajustes mais agressivos */
+@media (max-width: 767px) {
+    .products {
+        padding: 1em 0.5em; /* Menos padding em telas muito pequenas */
+    }
+
+    .products-header h2 {
+        font-size: 1.5em; /* Título ainda menor para mobile */
+    }
+
+    .products-menu-list {
+        justify-content: center; /* Centraliza os itens do menu no mobile */
+        gap: 0.5em; /* Espaçamento menor */
+    }
+
+    .products-menu-item {
+        padding: .3rem 0.6rem;
+        font-size: 0.85em;
+    }
+
+    .products-menu-actions {
+        flex-direction: column; /* Empilha botões e input */
+        align-items: stretch; /* Estica para preencher a largura */
+        gap: 0.8em; /* Espaço entre os elementos empilhados */
+    }
+
+    .products-menu-button {
+        width: 100%; /* Botões ocupam a largura total */
+        font-size: 0.9em;
+        text-align: center; /* Centraliza o texto no botão */
+        justify-content: center; /* Centraliza ícones/conteúdo */
+    }
+
+    .products-menu-input {
+        width: 100%; /* Input ocupa a largura total */
+    }
+
+    .products-list {
+        gap: 1em; /* Espaçamento mínimo entre cards */
+    }
+
+    .products-card {
+        min-width: 180px; /* Mínimo para caber bem */
+        max-width: calc(50% - 1em); /* Quase 2 cards por linha, com gap */
+        padding: 0.8rem;
+    }
+
+    /* Sobreescrevendo estilos de título de card de forma mais robusta para mobile */
+    .products-card h2 {
+        font-size: 1.1rem !important;
+        min-height: calc(1.1rem * 1.4 * 3);
+    }
+}
+
+/* Considerar telas muito pequenas, como iPhone 5/SE (max-width: 375px) */
+@media (max-width: 375px) {
+    .products-card {
+        min-width: unset; /* Remove min-width */
+        width: 100%; /* Cada card em uma linha */
+        max-width: 90%; /* Limita a largura para ter um padding nas laterais */
+        margin: 0.5em auto; /* Centraliza cards individuais */
+    }
+
+    .products-list {
+        flex-direction: column; /* Empilha os cards */
+        align-items: center; /* Centraliza os cards empilhados */
+        gap: 1em;
+    }
+
+    .products-menu-list {
+        gap: 0.3em;
+    }
+
+    .products-menu-item {
+        padding: .25rem 0.5rem;
+        font-size: 0.8em;
+    }
+}

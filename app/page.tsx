@@ -3,7 +3,8 @@ import LandingImage from "@/public/landing-image.png";
 import LandingInfo from "@/public/fill.webp";
 import Card1 from "@/components/card-1";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import Card2 from "@/components/card-2";
 
 export default function Home() {
   const MenuItems = [
@@ -38,7 +39,7 @@ export default function Home() {
           }}
           className="w-full max-w-7xl mx-10 px-15"
         >
-          <CarouselPrevious className="flex w-10 h-13 bg-primary justify-center outline-none border-none items-center left-2 text-accent hover:bg-primary/70 hover:text-white"/>
+          <CarouselPrevious className="flex w-10 h-13 bg-primary justify-center outline-none border-none items-center left-2 text-accent hover:bg-primary/70 hover:text-white" />
           <CarouselContent className="my-5 gap-5 pl-5">
             {MenuItems.map((item, index) => (
               <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
@@ -47,10 +48,38 @@ export default function Home() {
             ))}
           </CarouselContent>
           <CarouselNext className="flex w-10 h-13 bg-primary justify-center outline-none border-none items-center right-2 text-accent hover:bg-primary/70 hover:text-white">
-            <FaArrowRight />
           </CarouselNext>
         </Carousel>
       </section>
+      <section className="flex w-full flex-col items-center justify-center gap-4">
+        <h2 className="text-2xl font-bold">Explore nossos produtos</h2>
+        <p className="text-lg text-muted-foreground">Encontre tudo o que
+          você precisa para montar ou atualizar seu setup gamer.</p>
+        {/* className="flex flex-col flex-wrap md:flex-row justify-center gap-4 w-full max-w-7xl mx-10 px-15" */}
+        <Carousel
+          opts={{
+            align: 'center',
+            loop: true,
+          }}
+          className="w-full max-w-7xl mx-10 px-15"
+        >
+          <CarouselPrevious className="flex w-10 h-13 bg-primary justify-center outline-none border-none items-center left-2 text-accent hover:bg-primary/70 hover:text-white" />
+          <CarouselContent className="flex  h-full my-5 gap-5 pl-5">
+            <CarouselItem className="flex basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <Card2 img="https://www.bluecase.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00_3.png" title="PC Gamer i7 16Gb Ram 500Gb" description="Pc gamer perfeito para jogos como Fortinite, LoL e Warzone." />
+            </CarouselItem>
+            <CarouselItem className="flex basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <Card2 img="https://www.bluecase.com.br/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/b/m/bm24ffd4gc_0004.jpg" title='Monitor 24" Curvo' description="Para não perder nenhum detalhe da gameplay." price="876,89"/>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselNext className="flex w-10 h-13 bg-primary justify-center outline-none border-none items-center right-2 text-accent hover:bg-primary/70 hover:text-white" />
+        </Carousel>
+      </section>
+      <div className="flex flex-col items-center justify-center gap-4">
+        <h2 className="text-2xl font-bold">Destaques</h2>
+        <p className="text-lg text-muted-foreground">Confira os produtos mais populares
+          do momento.</p>
+      </div>
     </div>
   );
 }
